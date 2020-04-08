@@ -1,35 +1,56 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Kotlin Nights</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
-  </head>
-  <body>
-    <h1 class="text-center font-weight-bold">CountDown Js</h1>
-    <div class="container">
-      <div class="rounded bg-gradient-1 text-white shadow p-5 text-center mb-5">
-        <p class="mb-0 font-weight-bold text-uppercase">Kotlin Nights   |   Vol. 4 inicia en:</p>
-        <div id="time" class="countdown pt-4"></div>
-      </div>
-    </div>
+<html>
+<head>
+	<meta name="msapplication-tap-highlight" content="no"/>
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
 
-    <div class="container">
-      <div class="rounded bg-gradient-2 text-white shadow p-5 text-center mb-5">
-        <p class="mb-4 font-weight-bold text-uppercase">Kotlin Nights   |   Vol. 4 inicia en:</p>
-        <div id="time2" class="countdown-circles d-flex flex-wrap justify-content-center pt-4"></div>
-        <script type="text/javascript">
-          $('#time2').countdown('2020/04/07 15:40:00').on('update.countdown', function(event) {
-                var $this = $(this).html(event.strftime(''
-                  + '<div class="holder m-2"><span class="h1 font-weight-bold">%D</span> Días%!d</div>'
-                  + '<div class="holder m-2"><span class="h1 font-weight-bold">%H</span> Horas</div>'
-                  + '<div class="holder m-2"><span class="h1 font-weight-bold">%M</span> Minutos</div>'
-                  + '<div class="holder m-2"><span class="h1 font-weight-bold">%S</span> Segundos</div>'));
-              });
-        </script>
-      </div>
-    </div>
 
-  </body>
+	<script src="js/moments.js" type="text/javascript"></script>
+	<script src="js/particles.min.js" type="text/javascript"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/waves.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>#sereny</title>
+</head>
+
+<body>
+  <div class="timer" id="timePlayer">
+  	<form>
+		<div class="inp hours">
+			<input type="text"  maxlength="2" pattern="[0-9]+" value="0" id="hours"/>
+			<span class="label">h</span>
+		</div>
+
+		<div class="inp minutes">
+			<input type="text"  maxlength="2" pattern="[0-9]+" value="0" id="minutes"/>
+			<span class="label">m</span>
+		</div>
+
+		<div class="inp seconds">
+			<input type="text"  maxlength="2" pattern="[0-9]+" value="0" id="seconds"/>
+			<span class="label">s</span>
+		</div>
+
+		<div class="controls" id="control">
+		  <i type="submit" class="stop fa fa-stop fa-lg" id="stop"></i>
+		  <i class="start fa fa-play-circle fa-2x" id="start"></i>
+		  <i class="pause fa fa-pause fa-lg" id="pause"></i>
+		</div>
+  	</form>
+  </div>
+
+
+  <script src="js/waves.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      Waves.attach('.inp', ['waves-light', 'waves-classic', 'waves-effect']);
+      Waves.attach('.controls', ['waves-light']);
+      Waves.init();
+  </script>
+
+  <script src="js/app.js" type="text/javascript"></script>
+
+
+</body>
 </html>
